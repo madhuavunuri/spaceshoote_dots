@@ -15,12 +15,12 @@ public class ECSManager : MonoBehaviour
 
     [Header("Astroids Data")]
     public Vector3 spawnValues;
-    public GameObject astroidPrefab;
+    public GameObject asteroidPrefab;
     public int hazardCount;
     public float spawnWait;
     public float startWait;
     public float waveWait;
-
+    public float asteroidOffset;
 
 
     private bool gameOver;
@@ -28,7 +28,7 @@ public class ECSManager : MonoBehaviour
     private int score;
 
     Entity player;
-    Entity astroids;
+    Entity asteroids;
     public static Entity playerbullet;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class ECSManager : MonoBehaviour
         var settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, store);
         player = GameObjectConversionUtility.ConvertGameObjectHierarchy(playerPrefab, settings);
         playerbullet = GameObjectConversionUtility.ConvertGameObjectHierarchy(playerBulletPrefab, settings);
-        astroids = GameObjectConversionUtility.ConvertGameObjectHierarchy(astroidPrefab, settings);
+        asteroids = GameObjectConversionUtility.ConvertGameObjectHierarchy(asteroidPrefab, settings);
 
 
 
@@ -47,7 +47,6 @@ public class ECSManager : MonoBehaviour
         var playerInstance = manager.Instantiate(player);
         var position = new float3(0,0,-5);
         manager.SetComponentData(playerInstance, new Translation { Value = position });
-
 
         StartCoroutine(SpawnWaves());
     }
@@ -75,13 +74,13 @@ public class ECSManager : MonoBehaviour
         {
             for (int i = 0; i < hazardCount; i++)
             {
-                var instance = manager.Instantiate(astroids);
+                var instance = manager.Instantiate(asteroids);
                 print(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x) + " LLLL " + spawnValues.z);
                 float x = UnityEngine.Random.Range(-spawnValues.x, spawnValues.x);
                 float y = spawnValues.y;
-                float z = spawnValues.z;
+                float z = spawnValues.z + asteroidOffset;
                 var pos = new float3(x,y,z);
-                manager.SetComponentData(instance, new Translation { Value = new float3(0,0,5) });
+                manager.SetComponentData(instance, new Translation { Value = new float3(pos.x, pos.y, pos.z) });
 
                 yield return new WaitForSeconds(spawnWait);
             }

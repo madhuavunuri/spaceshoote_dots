@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 [GenerateAuthoringComponent]
-public class AstroidData : IComponentData
+public struct AsteroidData : IComponentData
 {
     public float speed;
 }

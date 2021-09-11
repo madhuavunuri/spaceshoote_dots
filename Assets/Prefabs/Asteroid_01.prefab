@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5864776024168778261}
   - component: {fileID: 8895642025362864260}
   - component: {fileID: 1142230584980350225}
+  - component: {fileID: -366649477186046613}
   m_Layer: 0
   m_Name: Asteroid_01
   m_TagString: Enemy
@@ -57,6 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -81,6 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8895642025362864260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +158,7 @@ MonoBehaviour:
     Value:
       x: -90
       y: 0
-      z: 90
+      z: -90
     RotationOrder: 4
   m_Capsule:
     Height: 1.503492
@@ -289,3 +292,16 @@ MonoBehaviour:
       m_Value: 0
   m_SerializedVersion: 1
   m_ConvexRadius_Deprecated: -1
+--- !u!114 &-366649477186046613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01145b8151ad3cc48ba6ddb2e054ea4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
