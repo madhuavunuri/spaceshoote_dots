@@ -4,7 +4,7 @@ using Unity.Transforms;
 using Unity.Jobs;
 using Unity.Collections;
 using Unity.Physics;
-
+using Unity.Mathematics;
 public class AsteroidSystem : JobComponentSystem
 {
     protected override JobHandle OnUpdate(JobHandle inputDeps)
@@ -20,7 +20,7 @@ public class AsteroidSystem : JobComponentSystem
                 // physics.Angular = float3.zero;
                 // physics.Linear -= asteroidData.speed * math.forward(rotation.Value) ;
                 position.Value -= asteroidData.speed * deltaTime * math.forward(rotation.Value);
-               
+
             })
             .Schedule(inputDeps);
 

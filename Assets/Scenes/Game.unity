@@ -1016,6 +1016,8 @@ MonoBehaviour:
   playerBulletPrefab: {fileID: 100000, guid: f4ec271e525e14ca9927a07e6a2e153d, type: 3}
   spawnValues: {x: 7, y: 0, z: 9}
   asteroidPrefab: {fileID: 100000, guid: 7d5f7699d6d1d48e485ac71126e12061, type: 3}
+  asteroidBlastPrefab: {fileID: 2430848799881583747, guid: 7eebe737267d6904a905b7d0bd1bf9c4,
+    type: 3}
   hazardCount: 6
   spawnWait: 0.1
   startWait: 1

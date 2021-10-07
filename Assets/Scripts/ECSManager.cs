@@ -16,6 +16,7 @@ public class ECSManager : MonoBehaviour
     [Header("Astroids Data")]
     public Vector3 spawnValues;
     public GameObject asteroidPrefab;
+    public GameObject asteroidBlastPrefab;
     public int hazardCount;
     public float spawnWait;
     public float startWait;
@@ -29,6 +30,7 @@ public class ECSManager : MonoBehaviour
 
     Entity player;
     Entity asteroids;
+    public static Entity asteroidBreak;
     public static Entity playerbullet;
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,7 @@ public class ECSManager : MonoBehaviour
         player = GameObjectConversionUtility.ConvertGameObjectHierarchy(playerPrefab, settings);
         playerbullet = GameObjectConversionUtility.ConvertGameObjectHierarchy(playerBulletPrefab, settings);
         asteroids = GameObjectConversionUtility.ConvertGameObjectHierarchy(asteroidPrefab, settings);
+        asteroidBreak = GameObjectConversionUtility.ConvertGameObjectHierarchy(asteroidBlastPrefab, settings);
 
 
 
