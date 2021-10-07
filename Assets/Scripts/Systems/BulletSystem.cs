@@ -4,11 +4,12 @@ using Unity.Transforms;
 using Unity.Jobs;
 using Unity.Collections;
 using Unity.Physics;
-
+using Unity.Physics.Systems;
 public class BulletSystem : JobComponentSystem
 {
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
+
         float deltaTime = Time.DeltaTime;
         var jobHandle = Entities
             .WithName("BulletSystem")
@@ -19,8 +20,8 @@ public class BulletSystem : JobComponentSystem
 
                 physics.Angular = float3.zero;
                 physics.Linear += bulletData.speed * math.forward(rotation.Value);
-              //  physics.Angular = float3.zero;
-              //  physics.Linear += deltaTime * bulletData.speed * math.forward(rotation.Value);
+                //  physics.Angular = float3.zero;
+                //  physics.Linear += deltaTime * bulletData.speed * math.forward(rotation.Value);
             })
             .Schedule(inputDeps);
 
@@ -28,4 +29,6 @@ public class BulletSystem : JobComponentSystem
 
         return jobHandle;
     }
+   
+  
 }

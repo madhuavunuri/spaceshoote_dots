@@ -132,7 +132,7 @@ MonoBehaviour:
     m_Template: {fileID: 0}
     m_CollisionResponse:
       m_Override: 0
-      m_Value: 0
+      m_Value: 1
     m_Friction:
       m_Override: 0
       m_Value:
@@ -254,7 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa1235d91593e64886e0839c7af25d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
+  isDestroy: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +311,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -334,3 +336,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

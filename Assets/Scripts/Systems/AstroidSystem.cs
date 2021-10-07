@@ -21,8 +21,6 @@ public class AsteroidSystem : JobComponentSystem
                 // physics.Linear -= asteroidData.speed * math.forward(rotation.Value) ;
                 position.Value -= asteroidData.speed * deltaTime * math.forward(rotation.Value);
                
-                //  physics.Angular = float3.zero;
-                //  physics.Linear += deltaTime * bulletData.speed * math.forward(rotation.Value);
             })
             .Schedule(inputDeps);
 

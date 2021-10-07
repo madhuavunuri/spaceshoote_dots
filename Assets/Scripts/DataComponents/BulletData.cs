@@ -4,4 +4,5 @@
 public struct BulletData : IComponentData
 {
     public float speed;
+    public bool isDestroy;
 }

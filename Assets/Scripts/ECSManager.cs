@@ -75,7 +75,7 @@ public class ECSManager : MonoBehaviour
             for (int i = 0; i < hazardCount; i++)
             {
                 var instance = manager.Instantiate(asteroids);
-                print(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x) + " LLLL " + spawnValues.z);
+               // print(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x) + " LLLL " + spawnValues.z);
                 float x = UnityEngine.Random.Range(-spawnValues.x, spawnValues.x);
                 float y = spawnValues.y;
                 float z = spawnValues.z + asteroidOffset;
